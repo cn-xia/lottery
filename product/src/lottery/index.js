@@ -709,7 +709,7 @@ function changeCard(cardIndex, user) {
 
   card.innerHTML = `<div class="company">${COMPANY}</div><div class="name">${
     user[1]
-  }</div><div class="details">${user[0] || ""}<br/>${user[2] || "PSST"}</div>`;
+  }</div><div class="details">${user[0] || ""}<br/>${"-" || "PSST"}</div>`;
 }
 
 /**
@@ -804,7 +804,8 @@ function reset() {
 }
 
 function createHighlight() {
-  let year = new Date().getFullYear() + "";
+  // let year = new Date().getFullYear() + "";
+  let year = "0203";
   let step = 4,
     xoffset = 1,
     yoffset = 1,
