@@ -10,7 +10,7 @@ const prizes = [
   {
     type: 0,
     count: 1,
-    title: "神秘大奖",
+    title: "神秘大礼包",
     text: ""
   },
   {
@@ -24,25 +24,32 @@ const prizes = [
     type: 2,
     count: 1,
     text: "",
-    title: "心里没谱奖",
+    title: "心里没谱",
     img: "../img/xinlimeipu.jpg"
   },
   {
     type: 3,
     count: 1,
     text: "",
-    title: "待定奖",
-    img: "../img/secrit.jpg"
+    title: "空气节点奖",
+    img: "../img/kongqijiedian.jpg"
   },
   {
     type: 4,
     count: 1,
     text: "",
-    title: "待定奖",
-    img: "../img/secrit.jpg"
+    title: "微光奖",
+    img: "../img/weiguang.jpg"
   },
   {
     type: 5,
+    count: 1,
+    text: "",
+    title: "不醒人事奖",
+    img: "../img/buxinrenshi.jpg"
+  },
+  {
+    type: 6,
     count: 1,
     text: "",
     title: "天然奖",

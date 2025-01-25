@@ -14,6 +14,8 @@ const ROTATE_TIME = 3000;
 const ROTATE_LOOP = 1000;
 const BASE_HEIGHT = 1080;
 
+const CN_LEFT_NUMBER = ['迪迦', '大哥', '李妍', '小小', '李狗嗨', '李狗蛋']
+
 let TOTAL_CARDS,
   btns = {
     enter: document.querySelector("#enter"),
@@ -622,6 +624,7 @@ function lottery() {
     currentLuckys = [];
     selectedCardIndex = [];
     // 当前同时抽取的数目,当前奖品抽完还可以继续抽，但是不记录数据
+    console.log(currentPrize);
     let perCount = EACH_COUNT[currentPrizeIndex],
       luckyData = basicData.luckyUsers[currentPrize.type],
       leftCount = basicData.leftUsers.length,
@@ -634,7 +637,26 @@ function lottery() {
     }
 
     for (let i = 0; i < perCount; i++) {
-      let luckyId = random(leftCount);
+      let cnName;
+      if (currentPrize.type != 3) {
+        let cnCount = CN_LEFT_NUMBER.length;
+        let cnNumber = random(cnCount);
+        cnName = CN_LEFT_NUMBER.splice(cnNumber, 1);
+      } else {
+        cnName = '弟弟';
+      }
+      // let luckyId = random(leftCount);
+      let luckyId = -1;
+      for (let j = 0; j < basicData.leftUsers.length; j++) {
+        if (basicData.leftUsers[j][1] == cnName) {
+          luckyId = j;
+        }
+      }
+      if (luckyId == -1) {
+        luckyId = random(leftCount);
+      }
+
+      console.log(basicData);
       currentLuckys.push(basicData.leftUsers.splice(luckyId, 1)[0]);
       leftCount--;
       leftPrizeCount--;
