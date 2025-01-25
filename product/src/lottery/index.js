@@ -14,7 +14,7 @@ const ROTATE_TIME = 3000;
 const ROTATE_LOOP = 1000;
 const BASE_HEIGHT = 1080;
 
-const CN_LEFT_NUMBER = ['迪迦', '大哥', '李妍', '小小', '李狗嗨', '李狗蛋']
+let CN_LEFT_NUMBER = ['迪迦', '大哥', '李妍', '小小', '李狗嗨', '李狗蛋']
 
 let TOTAL_CARDS,
   btns = {
@@ -249,6 +249,7 @@ function bindEvent() {
         resetCard();
         // 重置所有数据
         currentLuckys = [];
+        CN_LEFT_NUMBER = ['迪迦', '大哥', '李妍', '小小', '李狗嗨', '李狗蛋'];
         basicData.leftUsers = Object.assign([], basicData.users);
         basicData.luckyUsers = {};
         currentPrizeIndex = basicData.prizes.length - 1;
